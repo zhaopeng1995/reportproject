@@ -1,0 +1,5 @@
+#!/usr/bin/python3
+# encoding:utf-8
+
+TOO_MANY_CONNECTIONS = 1040
+LOST_CONNECT_DURING_QUERY = 2013
