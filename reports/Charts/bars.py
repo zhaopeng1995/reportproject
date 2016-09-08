@@ -31,7 +31,6 @@ class BaseHorizontalBarChart(object):
         self.chart_width = self.width - leftMargin - rightMargin
         self.chart_height = self.height
 
-
         self.chart = HorizontalBarChart()
         self.chart.x = 0
         self.chart.y = 0
@@ -83,13 +82,12 @@ class BaseHorizontalBarChart(object):
             # print(self.chart_height)
             self.height = self.chart.height + getattr(self.title, 'fontSize')
 
-
         if axis_unit:
             # 纵坐标轴单位
             self.y_unit.setText(axis_unit)
             self.y_unit.setOrigin(0, 0)
             self.y_unit.dy = self.chart.height + self.axis_font_size
-            self.y_unit.dx = -1 * self.axis_font_size * math.floor(len(axis_unit)/2)
+            self.y_unit.dx = -1 * self.axis_font_size * math.floor(len(axis_unit) / 2)
 
     def add_values(self, values, axis_unit=None):
 
@@ -146,6 +144,7 @@ def cpu_avg_load_distribution(template, percent):
 
     return draw
 
+
 # TODO: 用类HorizonBar写这个方法
 def resource_status(template, usage):
     """
@@ -191,6 +190,7 @@ def resource_status(template, usage):
 
 if __name__ == '__main__':
     from reportlab.platypus import SimpleDocTemplate
+
     # from reportlab.lib.pagesizes import A4
 
     element = list()
@@ -214,7 +214,7 @@ if __name__ == '__main__':
 
     print(percent)
     total = sum(percent)
-    percent = [i/total*100 for i in percent]
+    percent = [i / total * 100 for i in percent]
     # percent.reverse()
     # print(percent)
     #
